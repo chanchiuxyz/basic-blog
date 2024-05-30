@@ -1,9 +1,45 @@
 .dataList {
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
     margin: auto;
+}
+
+table,
+td {
+    border-bottom: 1px solid yellow;
+    font-size: 20px;
+}
+
+td {
+    text-align: center;
+    vertical-align: bottom;
+    height: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+
+tr:nth-child(even) {
+    background-color: antiquewhite;
+}
+
+tr:hover {
+    background-color: chartreuse;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+button {
+    margin-top: 20px;
+    width: 150px;
+    height: 40px;
+}
+
+button:hover {
+    background-color: yellow;
 }

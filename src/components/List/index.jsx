@@ -24,7 +24,32 @@ export default function List() {
     
   return (
     <div className='dataList'>
-       <ul>
+      
+      <table className='blogTable'>
+           
+           {posts.dataShow.map(
+
+               post => {
+                
+                   return (
+                       <tr key={post.id}>
+                       <td >
+                           {post.id}                  
+                       </td>
+                       <td >
+                           {post.title}                  
+                       </td>
+
+                       </tr>
+                       
+
+                   )
+                  
+               }                  
+           )}
+       </table>
+      
+       {/* <ul>
            
             {posts.dataShow.map(
 
@@ -32,15 +57,13 @@ export default function List() {
                  
                     return (
                         <li key={post.id}>
-                            {post.title}
-                            
-                           
+                            {post.title}                  
                         </li>
                     )
                    
                 }                  
             )}
-        </ul>
+        </ul> */}
        
         <button onClick={getMoreData}>get 5 more</button>
     </div>
