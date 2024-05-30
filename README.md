@@ -1,3 +1,78 @@
+# page
+
+![](./pic/image.png)
+
+# Create project
+```
+   npx create-react-app basic-blog
+   npm install install axios
+   
+```
+
+# Code --- App.jsx
+
+```
+
+import React from 'react'
+
+import './App.css';
+import List from  './components/List';
+
+export default function App() {
+  return (
+    <div>
+        <List />
+    </div>
+  )
+}
+```
+
+# Code --- components/List/index.jsx
+
+```
+    import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+
+export default function List() {
+    const [posts,setPosts] = useState({dataShow:[]})
+  
+    useEffect(() => {
+      // npm install i axios before use axios
+      axios.get('https://jsonplaceholder.typicode.com/posts?').then(
+        response => {           
+            setPosts({dataShow: [...response.data.slice(0,5)],data:response.data.slice(5)})
+            // console.log(posts)          
+        },
+        error => {console.log('error',error)}
+      ) 
+    },[])
+  
+    const getMoreData = () => {
+        setPosts({dataShow:[...posts.dataShow,...posts.data.slice(0,5)],data: posts.data.slice(5)})
+        // console.log(posts)
+    }
+    
+  return (
+    <div>
+       <ul>
+            {posts.dataShow.map(
+                post => {
+                    return (
+                        <li key={post.id}>
+                            {post.title}
+                        </li>
+                    )
+                }                  
+            )}
+        </ul>
+        <button onClick={getMoreData}>get 5 more</button>
+    </div>
+  )
+}
+
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
