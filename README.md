@@ -5,7 +5,7 @@
 # Create project
 ```
    npx create-react-app basic-blog
-   npm install install axios
+   npm install axios
    
 ```
 
