@@ -8,27 +8,18 @@
     margin: auto;
 }
 
-table,
-td {
-    border-bottom: 1px solid yellow;
-    font-size: 20px;
-}
-
-td {
-    text-align: center;
-    vertical-align: bottom;
-    height: 40px;
-    padding-left: 30px;
-    padding-right: 30px;
+li {
+    margin-bottom: 10px;
+    font-size: 30px;
+    width: 500px;
 }
 
 
-
-tr:nth-child(even) {
-    background-color: antiquewhite;
+li:nth-child(even) {
+    background-color: rgb(183, 168, 149);
 }
 
-tr:hover {
+li:hover {
     background-color: chartreuse;
     font-weight: 600;
     font-size: 30px;
